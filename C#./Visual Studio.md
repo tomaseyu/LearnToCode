@@ -1,3 +1,122 @@
+#!markdown
+
+# Get Started with C# for Beginners
+
+Welcome to .NET Interactive and your first C# notebook. C# is an programming language that you can use to make many different types of programs including websites, games, and mobile applications. Let's explore some of the basics of using C# in this notebook and write your first .NET code!
+
+Just click the run icon in a code cell to execute it, or hit the key command.
+
+#!markdown
+
+## C# Syntax Basics
+
+C# allows you to insert as much space as you would like between commands that you write.  You can use tabs or spaces to format your C# code to make it easier for us humans to read.  Complete lines of code, or **statements**, need to end with a semicolon so that the C# **compiler** knows that we have completed giving it an instruction.
+
+A **compiler** turns our C# statements into a file that a computer can execute.
+
+Let's write our first line of C# code, a simple "hello world" statement in C#:
+
+#!csharp
+
+Console.WriteLine("Hello, world!");
+
+#!markdown
+
+Let's review what happened there.  **Console.WriteLine** is an instruction that tells C# to write the contents of the parenthesis **( )**. We include some text, referred to as a **string** enclosed in double-quotes that we would like C# to write for us.
+
+#!markdown
+
+## Introducing Variables
+
+We can instruct C# to store values in memory using **variables**.  A variable can store a value that we **assign** to it using the `=` operator.  
+
+Let's define a variable of type `string` called `aFriend` and store the name "Bill".  
+
+#!csharp
+
+string aFriend = "Bill";
+Console.WriteLine(aFriend);
+
+#!markdown
+
+You can also re-assign different values to a variable, like so:
+
+#!csharp
+
+aFriend = "Maira";
+Console.WriteLine(aFriend);
+
+#!markdown
+
+## Work with strings
+
+The data type used above is called a `string`. It's used for textual data.
+
+You can also combine strings. In this case, we'll use `+` to combine two strings:
+
+#!csharp
+
+Console.WriteLine("Hello " + aFriend);
+
+#!markdown
+
+When working with strings, you can also use [String Interpolation](https://docs.microsoft.com/dotnet/csharp/language-reference/tokens/interpolated) to combine values into a string:
+
+#!csharp
+
+Console.WriteLine($"Hello {aFriend}");
+
+#!markdown
+
+You're not limited to a single variable between the curly braces when using String Interpolation:
+
+#!csharp
+
+string firstFriend = "Maria";
+string secondFriend = "Sage";
+Console.WriteLine($"My friends are {firstFriend} and {secondFriend}");
+
+#!markdown
+
+As you explore more with strings, you'll find that strings are more than a collection of letters. You can find the length of a string using `Length`. `Length` is a property of a string and it returns the number of characters in that string:
+
+#!csharp
+
+Console.WriteLine($"The name {firstFriend} has {firstFriend.Length} letters.");
+Console.WriteLine($"The name {secondFriend} has {secondFriend.Length} letters.");
+
+#!markdown
+
+## Do more with strings
+
+You've been using a *method*, `Console.WriteLine`, to print messages. A method is a block of code that implements some action. It has a name, so you can access it.
+
+Suppose your strings have leading or trailing spaces that you don't want to display. You want to **trim** the spaces from the strings. The `Trim` method and related methods `TrimStart` and `TrimEnd` do that work. You can just use those methods to remove leading and trailing spaces.
+
+#!csharp
+
+string greeting = "      Hello World!       ";
+Console.WriteLine($"[{greeting}]");
+
+string trimmedGreeting = greeting.TrimStart();
+Console.WriteLine($"[{trimmedGreeting}]");
+
+trimmedGreeting = greeting.TrimEnd();
+Console.WriteLine($"[{trimmedGreeting}]");
+
+trimmedGreeting = greeting.Trim();
+Console.WriteLine($"[{trimmedGreeting}]");
+
+#!markdown
+
+There are other methods available to work with a string. For example, you've probably used a search and replace command in an editor or word processor before. The `Replace` method does something similar in a string. It searches for a substring and replaces it with different text. The `Replace` method takes two parameters. These are the strings between the parentheses. The first string is the text to search for. The second string is the text to replace it with:
+
+#!csharp
+
+string sayHello = "Hello World!";
+Console.WriteLine(sayHello);
+sayHello = sayHello.Replace("Hello", "Greetings");
+Console.WriteLine(sayHello);
 Two other useful methods make a string ALL CAPS or all lower case:
 
 #!csharp
